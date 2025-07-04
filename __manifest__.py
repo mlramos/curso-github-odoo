@@ -18,7 +18,8 @@
 
     # always loaded
     'data': [
-        'views/view_stock_picking_form.xml',   
+        'data/data_server_action.xml',
+        'views/res_partner_views.xml',   
     ],
     
 }
