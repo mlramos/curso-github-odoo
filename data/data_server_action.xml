@@ -13,5 +13,16 @@
             </field>
         </record>
 
+        <record id="action_set_vip_curso_tag" model="ir.actions.server">
+        <field name="name">CURSO | Asignar etiqueta VIP - CURSO</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="type">ir.actions.server</field>
+        <field name="code">
+            for partner in records:
+                vip_tag = env.ref('curso-github-odoo.partner_category_vip_curso')
+                partner.write({'category_ids': [(4,vip_tag.id)]})
+        </field>
+
     </data>
 </odoo>

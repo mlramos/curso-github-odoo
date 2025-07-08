@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Heredamos la vista formulario de sale.order -->
+        <record id="view_order_form_inherit_curso" model="ir.ui.view">
+            <field name="name">view_order_form_inherit_curso</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <!-- Cambiar nombre de campo -->
+                <xpath expr="//field[@name='client_order_ref']" position="attributes">
+                    <attribute name="string">Ref. cliente</attribute>
+                </xpath>
+
+                <!-- Eliminar campo -->
+                <xpath expr="//field[@name='validity_date']" position="replace">
+                </xpath>
+
+                <!-- Añadir campo -->
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="user_id"/>
+                </xpath>
+
+                <!-- Añadir campo dentro de grupo -->
+                <xpath expr="//notebook//page[@name='other_information']//group//group[@name='sales_person']" position="inside">
+                    <field name="validity_date"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

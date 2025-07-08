@@ -18,8 +18,10 @@
 
     # always loaded
     'data': [
+        'data/data.xml',
         'data/data_server_action.xml',
-        'views/res_partner_views.xml',   
+        'views/res_partner_views.xml', 
+        'views/sale_orde_views.xml'  
     ],
     
 }
